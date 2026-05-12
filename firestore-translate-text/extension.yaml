@@ -192,6 +192,7 @@ params:
     description: >
       Configure your database id in case your dont want to use the default. This parametet is not required.
     required: false
+    default: (default)
 
   # ! DO NOT UNCOMMENT THIS PARAMETER, IT IS CURRENTLY PROBLEMATIC
   # - param: DO_BACKFILL
