@@ -15,6 +15,7 @@
  */
 
 export default {
+  databaseId: process.env.DATABASE_ID || "(default)",
   doBackfill: false,
   languages: Array.from(new Set(process.env.LANGUAGES.split(","))),
   location: process.env.LOCATION,

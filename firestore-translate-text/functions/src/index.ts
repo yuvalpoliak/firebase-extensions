@@ -44,6 +44,7 @@ events.setupEventChannel();
 logs.init(config);
 
 export const fstranslate = functions.firestore
+  .database(config.databaseId)
   .document(process.env.COLLECTION_PATH)
   .onWrite(async (change, context): Promise<void> => {
     logs.start(config);
