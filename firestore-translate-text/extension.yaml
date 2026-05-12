@@ -39,6 +39,9 @@ contributors:
   - authorName: Invertase
     email: oss@invertase.io
     url: https://github.com/invertase
+  - authorName: Yuval Poliak
+    email: yuvalpoliak@proton.me
+    url: https://github.com/yuvalpoliak
 
 billingRequired: true
 
@@ -63,7 +66,7 @@ resources:
       runtime: nodejs22
       eventTrigger:
         eventType: providers/cloud.firestore/eventTypes/document.write
-        resource: projects/${param:PROJECT_ID}/databases/(default)/documents/${param:COLLECTION_PATH}/{messageId}
+        resource: projects/${param:PROJECT_ID}/databases/${param.DATABASE_ID}/documents/${param:COLLECTION_PATH}/{messageId}
 
   # ! DO NOT UNCOMMENT THIS PARAMETER, IT IS CURRENTLY PROBLEMATIC
   # - name: fstranslatebackfill
@@ -182,6 +185,12 @@ params:
       at: https://ai.google.dev/gemini-api/docs/api-key. This is not required if
       you use Vertex AI as the provider.
     type: secret
+    required: false
+
+  - param: DATABASE_ID
+    label: DATABASE ID
+    description: >
+      Configure your database id in case your dont want to use the default. This parametet is not required.
     required: false
 
   # ! DO NOT UNCOMMENT THIS PARAMETER, IT IS CURRENTLY PROBLEMATIC
